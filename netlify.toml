@@ -1,9 +1,9 @@
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/api/*"
+  to = "http://157.230.211.52:3001/api/:splat"
   status = 200
 
 [[redirects]]
-  from = "/api/*"
-  to = "http://157.230.211.52:3001/api/:splat"
+  from = "/*"
+  to = "/index.html"
   status = 200
