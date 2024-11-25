@@ -72,8 +72,8 @@ app.post('/api/chat', async (req, res) => {
     const gptResponse = response.choices[0].message.content;
     res.json({ response: gptResponse });
   } catch (error) {
-    console.error('Error al obtener la respuesta de GPT:', error);
-    res.status(500).json({ error: 'Error al obtener la respuesta de GPT' });
+    console.error('Error al obtener la respuesta de GPT:', error.response?.data || error.message);
+    res.status(500).json({ error: 'Error al obtener la respuesta de GPT', details: error.response?.data || error.message });
   }
 });
 
