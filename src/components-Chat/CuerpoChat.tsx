@@ -20,7 +20,7 @@ export default function CuerpoChat() {
 
     try {
       // Enviar el historial de mensajes al servidor backend
-      const response = await axios.post('http://localhost:3001/api/chat', { messages: newMessages.map(msg => ({ role: msg.sender === 'Paciente' ? 'user' : 'assistant', content: msg.text })) });
+      const response = await axios.post('/api/chat', { messages: newMessages.map(msg => ({ role: msg.sender === 'Paciente' ? 'user' : 'assistant', content: msg.text })) });
 
       const gptResponse = response.data.response;
 
